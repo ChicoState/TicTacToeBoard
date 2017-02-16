@@ -1,18 +1,9 @@
 /**
- * Unit Tests for Rando Test
+ * Unit Tests for TicTacToeBoard
 **/
 
 #include <gtest/gtest.h>
 #include "TicTacToeBoard.h"
-
-/*  
-	FUNCTIONS WE NEED TO TEST:
-
-	bool shouldWorry(bool,bool,bool);
-	bool isDivisbleBy(int,int);
-	bool isPrime(int);
-	int nearestToZero(int,int);
-*/
  
 class TicTacToeBoardTest : public ::testing::Test
 {
