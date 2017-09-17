@@ -13,13 +13,10 @@ void TicTacToeBoard::toggleTurn()
 //Constructor sets an empty board and specifies it is X's turn first
 TicTacToeBoard::TicTacToeBoard()
 {
-
-}
-
-//Resets each board location to the Blank Piece value
-void TicTacToeBoard::clearBoard()
-{
-
+  turn = X;
+  for(int i=0; i<BOARDSIZE; i++)
+    for(int j=0; j<BOARDSIZE; j++)
+      board[i][j] = Blank;
 }
 
 /**
@@ -27,7 +24,9 @@ void TicTacToeBoard::clearBoard()
  * piece is placed, and toggles which Piece's turn it is. placePiece does 
  * NOT allow to place a piece in a location where there is already a piece.
  * In that case, placePiece just returns what is already at that location. 
- * Out of bounds coordinates return the Piece Invalid value
+ * Out of bounds coordinates return the Piece Invalid value. When the game
+ * is over, no more pieces can be placed so attempting to place a piece
+ * should neither change the board nor change whose turn it is.
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
