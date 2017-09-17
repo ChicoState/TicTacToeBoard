@@ -21,12 +21,15 @@ class TicTacToeBoard
   	Piece board[BOARDSIZE][BOARDSIZE];
   	Piece turn;
 
-  	//Switches turn member variable to represent whether it's X's or O's turn
-  	void toggleTurn();
-
   public:
   	//Constructor sets an empty board and specifies it is X's turn first
   	TicTacToeBoard();
+
+    /**
+     * Switches turn member variable to represent whether it's X's or O's turn
+     * and returns whose turn it is
+    **/
+    Piece toggleTurn();
 
   	/**
      * Places the piece of the current turn on the board, returns what

@@ -11,17 +11,19 @@ ___
 `Piece turn` 
 
 **turn** represents whose turn it is to place a piece (defaults to X)
-
-## Private Functions
-`void toggleTurn()`  	
-
-*Switches turn member variable to represent whether it's X's or O's turn*
   	
 ## Public Functions
 `TicTacToeBoard()`
 
 *Constructor sets an empty board and specifies it is X's turn first*
 ___
+
+`Piece toggleTurn()`
+
+*Switches turn member variable to represent whether it's X's or O's turn
+and returns whose turn it is*
+___
+
 
 `Piece placePiece(int row, int column)`
 

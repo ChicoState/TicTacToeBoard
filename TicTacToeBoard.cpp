@@ -4,12 +4,6 @@
  * to represent the spaces on the board.
 **/
 
-//Switches turn member variable to represent whether it's X's or O's turn
-void TicTacToeBoard::toggleTurn()
-{
-
-}
-
 //Constructor sets an empty board and specifies it is X's turn first
 TicTacToeBoard::TicTacToeBoard()
 {
@@ -17,6 +11,15 @@ TicTacToeBoard::TicTacToeBoard()
   for(int i=0; i<BOARDSIZE; i++)
     for(int j=0; j<BOARDSIZE; j++)
       board[i][j] = Blank;
+}
+
+/**
+ * Switches turn member variable to represent whether it's X's or O's turn
+ * and returns whose turn it is
+**/
+Piece TicTacToeBoard::toggleTurn()
+{
+  return Invalid;
 }
 
 /**
