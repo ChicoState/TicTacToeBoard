@@ -20,3 +20,8 @@ TEST(TicTacToeBoardTest, sanityCheck)
 	ASSERT_TRUE(true);
 }
 */
+
+TEST(TicTacToeBoard, getPiece) {
+	ASSERT_LE(column, BOARDSIZE);
+	ASSERT_LE(row, BOARDSIZE);
+}
