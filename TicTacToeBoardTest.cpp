@@ -4,6 +4,7 @@
 
 #include <gtest/gtest.h>
 #include "TicTacToeBoard.h"
+using namespace std;
  
 class TicTacToeBoardTest : public ::testing::Test
 {
@@ -21,7 +22,34 @@ TEST(TicTacToeBoardTest, sanityCheck)
 }
 */
 
-TEST(TicTacToeBoard, getPiece) {
-	ASSERT_LE(column, BOARDSIZE);
-	ASSERT_LE(row, BOARDSIZE);
+TEST(TicTacToeBoardTest, getPieceTest) {
+	TicTacToeBoard TicTac;
+	Piece x = TicTac.getPiece(4, 4);
+	ASSERT_EQ(Invalid, x);
+}
+
+TEST(TicTacToeBoardTest, getPieceTest2) {
+	TicTacToeBoard TicTac;
+	Piece x = TicTac.getPiece(-1, -1);
+	ASSERT_EQ(Invalid, x);
+}
+
+TEST(TicTacToeBoardTest, getPieceTest3) {
+	TicTacToeBoard TicTac;
+	Piece x = TicTac.getPiece(3, 3);
+	ASSERT_EQ(Blank, x);	
+}
+
+TEST(TicTacToeBoardTest, getPieceTest4) {
+	TicTacToeBoard TicTac;
+	Piece x = TicTac.getPiece(0, 0);
+	ASSERT_EQ(Blank, x);	
+}
+
+TEST(TicTacToeBoardTest, getPieceTest5) {
+	TicTacToeBoard TicTac;
+	TicTac.toggleTurn();
+	TicTac.placePiece(2, 1);
+	Piece x = TicTac.getPiece(2, 1);
+	ASSERT_EQ(O, x);	
 }
