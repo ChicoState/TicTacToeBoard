@@ -22,6 +22,28 @@ TEST(TicTacToeBoardTest, sanityCheck)
 }
 */
 
+TEST(TicTacToeBoardTest, toggleTest) {
+	TicTacToeBoard TicTac;
+	Piece x = TicTac.toggleTurn();
+	ASSERT_EQ(O, x);
+	x = TicTac.toggleTurn();
+	ASSERT_EQ(X, x);
+}
+
+TEST(TicTacToeBoardTest, placePieceTest) {
+	TicTacToeBoard TicTac;
+	TicTac.toggleTurn();
+	Piece x = TicTac.placePiece(2, 2);
+	ASSERT_EQ(O, x);
+}
+
+TEST(TicTacToeBoardTest, placePieceTest2) {
+	TicTacToeBoard TicTac;
+	TicTac.toggleTurn();
+	Piece x = TicTac.placePiece(4, 4);
+	ASSERT_EQ(Invalid, x);
+}
+
 TEST(TicTacToeBoardTest, getPieceTest) {
 	TicTacToeBoard TicTac;
 	Piece x = TicTac.getPiece(4, 4);
