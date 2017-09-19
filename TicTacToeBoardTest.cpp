@@ -75,3 +75,53 @@ TEST(TicTacToeBoardTest, getPieceTest5) {
 	Piece x = TicTac.getPiece(2, 1);
 	ASSERT_EQ(O, x);	
 }
+
+TEST(TicTacToeBoardTest, getWinnerTest) {
+	TicTacToeBoard TicTac;
+	Piece x = TicTac.getWinner();
+	ASSERT_EQ(Invalid, x);
+}
+
+TEST(TicTacToeBoardTest, getWinnerTest2) {
+	TicTacToeBoard TicTac;
+	TicTac.placePiece(0,0);
+	TicTac.placePiece(0,1);
+	TicTac.placePiece(1,1);
+	TicTac.placePiece(0,2);
+	TicTac.placePiece(2,2);
+	Piece x = TicTac.getWinner();
+	ASSERT_EQ(X, x);
+}
+
+TEST(TicTacToeBoardTest, getWinnerTest3) {
+	TicTacToeBoard TicTac;
+	TicTac.placePiece(0,0);
+	TicTac.toggleTurn();
+	TicTac.placePiece(1,1);
+	TicTac.toggleTurn();
+	TicTac.placePiece(2,2);
+	Piece x = TicTac.getWinner();
+	ASSERT_EQ(X, x);
+}
+
+TEST(TicTacToeBoardTest, getWinnerTest4) {
+	TicTacToeBoard TicTac;
+	TicTac.placePiece(2,0);
+	TicTac.toggleTurn();
+	TicTac.placePiece(1,1);
+	TicTac.toggleTurn();
+	TicTac.placePiece(0,2);
+	Piece x = TicTac.getWinner();
+	ASSERT_EQ(X, x);
+}
+
+TEST(TicTacToeBoardTest, getWinnerTest5) {
+	TicTacToeBoard TicTac;
+	TicTac.placePiece(2,0);
+	TicTac.toggleTurn();
+	TicTac.placePiece(1,0);
+	TicTac.toggleTurn();
+	TicTac.placePiece(0,0);
+	Piece x = TicTac.getWinner();
+	ASSERT_EQ(X, x);
+}
