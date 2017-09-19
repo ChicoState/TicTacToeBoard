@@ -39,8 +39,13 @@ TEST(TicTacToeBoardTest, placePieceTest) {
 
 TEST(TicTacToeBoardTest, placePieceTest2) {
 	TicTacToeBoard TicTac;
-	TicTac.toggleTurn();
 	Piece x = TicTac.placePiece(4, 4);
+	ASSERT_EQ(Invalid, x);
+}
+
+TEST(TicTacToeBoardTest, placePieceTest3) {
+	TicTacToeBoard TicTac;
+	Piece x = TicTac.placePiece(-1, -1);
 	ASSERT_EQ(Invalid, x);
 }
 
@@ -124,4 +129,12 @@ TEST(TicTacToeBoardTest, getWinnerTest5) {
 	TicTac.placePiece(0,0);
 	Piece x = TicTac.getWinner();
 	ASSERT_EQ(X, x);
+}
+
+TEST(TicTacToeBoardTest, getWinnerTest6) {
+	TicTacToeBoard TicTac;
+	TicTac.placePiece(0,0);
+	TicTac.placePiece(0,1);
+	Piece x = TicTac.getWinner();
+	ASSERT_EQ(Blank, x);
 }
