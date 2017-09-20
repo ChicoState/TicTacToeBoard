@@ -84,21 +84,61 @@ TEST(TicTacToeBoardTest, placePieceO) {
 	ASSERT_EQ(O,local_board.getPiece(0,0));
 }
 
-TEST(TicTacToeBoardTest, HorizontalWinX) {
+TEST(TicTacToeBoardTest, HorizontalWinX0) {
 	TicTacToeBoard local_board;	
 	for(int i = 0; i < BOARDSIZE; i++) {
 		local_board.placePiece(i,0);
 	}
+	ASSERT_NE(Invalid,local_board.getWinner());
 	ASSERT_EQ(local_board.getPiece(0,0),local_board.getWinner());
 }
 
-TEST(TicTacToeBoardTest, HorizontalWinO) {
+TEST(TicTacToeBoardTest, HorizontalWinX1) {
+	TicTacToeBoard local_board;	
+	for(int i = 0; i < BOARDSIZE; i++) {
+		local_board.placePiece(i,1);
+	}
+	ASSERT_NE(Invalid,local_board.getWinner());
+	ASSERT_EQ(local_board.getPiece(1,1),local_board.getWinner());
+}
+
+TEST(TicTacToeBoardTest, HorizontalWinX2) {
+	TicTacToeBoard local_board;	
+	for(int i = 0; i < BOARDSIZE; i++) {
+		local_board.placePiece(i,2);
+	}
+	ASSERT_NE(Invalid,local_board.getWinner());
+	ASSERT_EQ(local_board.getPiece(2,2),local_board.getWinner());
+}
+
+TEST(TicTacToeBoardTest, HorizontalWinO0) {
 	TicTacToeBoard local_board;	
 	local_board.toggleTurn();
 	for(int i = 0; i < BOARDSIZE; i++) {
 		local_board.placePiece(i,0);
 	}
+	ASSERT_NE(Invalid,local_board.getWinner());
 	ASSERT_EQ(local_board.getPiece(0,0),local_board.getWinner());
+}
+
+TEST(TicTacToeBoardTest, HorizontalWinO1) {
+	TicTacToeBoard local_board;	
+	local_board.toggleTurn();
+	for(int i = 0; i < BOARDSIZE; i++) {
+		local_board.placePiece(i,0);
+	}
+	ASSERT_NE(Invalid,local_board.getWinner());
+	ASSERT_EQ(local_board.getPiece(1,1),local_board.getWinner());
+}
+
+TEST(TicTacToeBoardTest, HorizontalWinO2) {
+	TicTacToeBoard local_board;	
+	local_board.toggleTurn();
+	for(int i = 0; i < BOARDSIZE; i++) {
+		local_board.placePiece(i,0);
+	}
+	ASSERT_NE(Invalid,local_board.getWinner());
+	ASSERT_EQ(local_board.getPiece(2,2),local_board.getWinner());
 }
 
 TEST(TicTacToeBoardTest, VerticalWinX) {
@@ -106,6 +146,7 @@ TEST(TicTacToeBoardTest, VerticalWinX) {
 	for(int i = 0; i < BOARDSIZE; i++) {
 		local_board.placePiece(0,i);
 	}
+	ASSERT_NE(Invalid,local_board.getWinner());
 	ASSERT_EQ(local_board.getPiece(0,0),local_board.getWinner());
 }
 
@@ -115,8 +156,8 @@ TEST(TicTacToeBoardTest, VerticalWinO) {
 	for(int i = 0; i < BOARDSIZE; i++) {
 		local_board.placePiece(0,i);
 	}
+	ASSERT_NE(Invalid,local_board.getWinner());
 	ASSERT_EQ(local_board.getPiece(0,0),local_board.getWinner());
-	
 }
 
 TEST(TicTacToeBoardTest, DiagonalWinX1) {
@@ -124,6 +165,7 @@ TEST(TicTacToeBoardTest, DiagonalWinX1) {
 	for(int i = 0; i < BOARDSIZE; i++) {
 		local_board.placePiece(i,i);
 	}
+	ASSERT_NE(Invalid,local_board.getWinner());
 	ASSERT_EQ(local_board.getPiece(1,1),local_board.getWinner());
 }
 
@@ -132,6 +174,7 @@ TEST(TicTacToeBoardTest, DiagonalWinX2) {
 	for(int i = 0; i < BOARDSIZE; i++) {
 		local_board.placePiece(i,BOARDSIZE-i-1);
 	}
+	ASSERT_NE(Invalid,local_board.getWinner());
 	ASSERT_EQ(local_board.getPiece(1,1),local_board.getWinner());
 }
 
@@ -141,6 +184,7 @@ TEST(TicTacToeBoardTest, DiagonalWinO1) {
 	for(int i = 0; i < BOARDSIZE; i++) {
 		local_board.placePiece(i,i);
 	}
+	ASSERT_NE(Invalid,local_board.getWinner());
 	ASSERT_EQ(local_board.getPiece(1,1),local_board.getWinner());
 }
 
@@ -150,5 +194,6 @@ TEST(TicTacToeBoardTest, DiagonalWinO2) {
 	for(int i = 0; i < BOARDSIZE; i++) {
 		local_board.placePiece(i,BOARDSIZE-i-1);
 	}
+	ASSERT_NE(Invalid,local_board.getWinner());
 	ASSERT_EQ(local_board.getPiece(1,1),local_board.getWinner());
 }
