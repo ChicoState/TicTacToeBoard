@@ -73,6 +73,11 @@ TEST(TicTacToeBoardTest, getPieceTest4) {
 	ASSERT_EQ(Blank, x);	
 }
 
+
+/*
+BUG: When trying to get a piece that exists, is returning blank. In
+getPieceTest5 the outcome should be O. But returns blank.
+*/
 TEST(TicTacToeBoardTest, getPieceTest5) {
 	TicTacToeBoard TicTac;
 	TicTac.toggleTurn();
