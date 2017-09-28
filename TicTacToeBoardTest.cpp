@@ -107,9 +107,6 @@ TEST(TicTacToeBoardTest, getWinnerDraw)
 	board.placePiece(2, 1);
 	EXPECT_EQ(board.getWinner(), Invalid);
 }
-<<<<<<< HEAD
-=======
-*/
 
 TEST(TicTacToeBoardTest, toggleTurnTest)
 {
@@ -197,4 +194,3 @@ TEST(TicTacToeBoardTest,getWinnerDraw)
 	board.placePiece(2,1); 
 	EXPECT_EQ(board.getWinner(), Invalid);
 }
->>>>>>> 5a24d64ab6aea25313807dff0d10db6fcc65f289
