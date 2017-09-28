@@ -57,6 +57,8 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 * Returns what piece is at the provided coordinates, or Blank if there
 * are no pieces there, or Invalid if the coordinates are out of bounds
 **/
+
+/*There is a bug when passed in a number < 1 or > 3. It should not fail when passed in 0, fail when passed in 3 if working correctly. */
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
 	if (row < 1 || row > 3 || column < 1 || column > 3) {
@@ -79,7 +81,7 @@ Piece TicTacToeBoard::getWinner()
 		}
 	}
 
-	if ((board[0][0] == board[0][1] == board[0][2]) || (board[0][0] == board[1][0] == board[2][0]) || (board[0][0] == board[1][1] == board[2][2])) {
+	if ((board[0][0] && board[0][1] == board[0][2]) || (board[0][0] == board[1][0] == board[2][0]) || (board[0][0] == board[1][1] == board[2][2])) {
 		return board[0][0];
 	}
 	else if ((board[0][1] == board[1][1] == board[2][1]) || board[1][0] == board[1][1] == board[1][2]) {
