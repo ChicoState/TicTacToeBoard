@@ -19,9 +19,13 @@ TicTacToeBoard::TicTacToeBoard()
 **/
 Piece TicTacToeBoard::toggleTurn()
 {
-  return Invalid;
+  if(turn == X){
+ turn = O; return O;
 }
-
+ else{
+turn = X; return X;
+ }
+}
 /**
  * Places the piece of the current turn on the board, returns what
  * piece is placed, and toggles which Piece's turn it is. placePiece does 
@@ -33,16 +37,35 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
-  return Invalid;
+  if(row < 0 || row > 2 || column < 0 || column > 2){
+    return Invalid;
+  }
+  else if(board[row][column] == Blank){
+    if (turn == X){
+      board[row][column] = X; turn =  O; return O;
+    }
+    else{
+      board[row][column] = O; turn = X; return X;
+    } 
+  }
+  else{ return board[row][column];
+  }
 }
 
 /**
  * Returns what piece is at the provided coordinates, or Blank if there
  * are no pieces there, or Invalid if the coordinates are out of bounds
 **/
+
+/*There is a bug when passed in a number < 1 or > 3. It should not fail when passed in 0, fail when passed in 3 if working correctly. */
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
-  return Invalid;
+  if(row < 1 || row > 3 || column < 1 || column > 3){
+    return Invalid;
+  }
+  else if(board[row][column] == Blank) return Blank;
+  else if(board[row][column] == X) return X;
+  else {return O;}
 }
 
 /**
@@ -51,5 +74,20 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 **/
 Piece TicTacToeBoard::getWinner()
 {
-  return Invalid;
+ for(int i = 0; i < 3; i++){
+	for(int j = 0; j < 3; j++){
+		if(board[i][j] == Blank || board[j][i] == Blank) return Blank;
+	}
+ } 
+
+  if((board[0][0] && board[0][1] == board[0][2] ) || (board[0][0] == board[1][0] == board[2][0]) || (board[0][0] == board[1][1] == board[2][2])){
+	return board[0][0];
+	}
+  else if((board[0][1] == board[1][1] == board[2][1]) || board[1][0] == board[1][1] == board[1][2]){
+	return board[1][1];
+	}
+  else if(board[2][0]==board[2][1] == board[2][2] || board[0][2] == board[1][2] == board [2][2]){
+	return board[2][2];
+	}
+ return Invalid;
 }
