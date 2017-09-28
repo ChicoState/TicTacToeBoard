@@ -52,10 +52,6 @@ TEST(TicTacToeBoardTest, placePieceTest)
 	EXPECT_EQ(board.placePiece(1,2), O);
 	EXPECT_EQ(board.placePiece(2,2), X);
 }
-/* 
-BUG: Describe the situation and what the EXPECTED outcome should be 
-but also what the ACTUAL outcome is with your bug
-*/
 /*BUG: Testing getPieceTest. Expected outcome for all getPiece tests accessing
 the board at position 0-2 for either row or column should return the correct expected output,
 ie (0,0) should return blank. However, it returns invalid.*/
