@@ -2,6 +2,9 @@ sudo: enabled
 
 language: cpp
 
+notifications:
+  email: false
+
 before_install:
   - mkdir gtest
   - cd gtest
