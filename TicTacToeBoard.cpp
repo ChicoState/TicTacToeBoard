@@ -19,7 +19,12 @@ TicTacToeBoard::TicTacToeBoard()
 **/
 Piece TicTacToeBoard::toggleTurn()
 {
-  return Invalid;
+  if (turn != X) {
+    turn = X;
+  } else {
+    turn = O;
+  }
+  return turn;
 }
 
 /**
@@ -33,16 +38,39 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
+  if (turn == X && board[row][column] == Blank) {
+    board[row][column] = X;
+    toggleTurn();
+    return X;
+  } else if (turn == O && board[row][column] == Blank) {
+    board[row][column] = O;
+    toggleTurn();
+    return O;
+  }
   return Invalid;
 }
 
 /**
  * Returns what piece is at the provided coordinates, or Blank if there
- * are no pieces there, or Invalid if the coordinates are out of bounds
+ * are no pieces there, or Invalid if the coordinates are out of bounds 
 **/
+
+/*
+BUG: When trying to get a piece that exists, is returning blank. In
+getPieceTest5 the outcome should be O. But returns blank.
+*/
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
-  return Invalid;
+  if (row > 4 || column  > 4 || row < 0 || column < 0) {
+    return Invalid;
+  } else if (board[row][column] != X && board[row][column] != O) {
+    return Blank;
+  } else {
+    if (board[row][column] == X) {
+      return X;
+    }
+      return O;
+  }
 }
 
 /**
@@ -51,5 +79,26 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 **/
 Piece TicTacToeBoard::getWinner()
 {
-  return Invalid;
+  if (board[1][1] != Blank){
+    if (board[0][0] == board[1][1] && board[0][0] == board[2][2]) {
+      return board[0][0];
+    }
+    if (board[2][0] == board[1][1] && board[2][0] == board[0][2]) {
+      return board[2][0];
+    }
+  }
+  for(int i=0; i<BOARDSIZE; i++) {
+    if (board[i][0] != Blank) {
+      if (board[i][0] == board[i][1] && board[i][0] == board[i][2]) {
+        return board[i][0];
+      } else if (board[0][i] == board[1][i] && board[0][i] == board[2][i] && board[0][i] != Blank) {
+        return board[0][i];
+      } else {
+        return Blank;
+      }
+    } else {
+      return Invalid;
+    }
+  }
+  return Blank;
 }
