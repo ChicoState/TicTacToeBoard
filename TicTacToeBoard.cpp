@@ -61,7 +61,7 @@ getPieceTest5 the outcome should be O. But returns blank.
 */
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
-  if (row > 3 || column  > 3 || row < 0 || column < 0) {
+  if (row > 4 || column  > 4 || row < 0 || column < 0) {
     return Invalid;
   } else if (board[row][column] != X && board[row][column] != O) {
     return Blank;
