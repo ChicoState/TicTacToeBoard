@@ -19,7 +19,20 @@ TicTacToeBoard::TicTacToeBoard()
 **/
 Piece TicTacToeBoard::toggleTurn()
 {
-  return Invalid;
+  if (turn == X)
+  {
+    turn = O;
+  }
+  
+  else if (turn == O)
+  {
+    turn = X;
+  }
+  else
+  {
+    turn = Invalid;
+  }
+  return turn;
 }
 
 /**
@@ -33,7 +46,16 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
-  return Invalid;
+  if (row < BOARDSIZE && row >= 0 && column < BOARDSIZE && column >= 0 && board[row][column] == Blank)
+  {
+    board[row][column] = turn;
+    toggleTurn();
+    return board[row][column];
+  }
+  else 
+  {
+    return Invalid;
+  }
 }
 
 /**
@@ -42,8 +64,19 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 **/
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
-  return Invalid;
-}
+  if (row < BOARDSIZE && row >= 0 && column < BOARDSIZE && column >= 0 && board[row][column] != Blank)
+  {
+    return board[row][column];
+  }
+  else if (row < BOARDSIZE && row >= 0 && column <= BOARDSIZE && column >= 0 && board[row][column] == Blank)
+  {
+    return Blank;
+  }
+  else
+  {
+    return Invalid;
+  }
+} 
 
 /**
  * Returns which Piece has won, if there is a winner, Invalid if the game
@@ -51,5 +84,28 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 **/
 Piece TicTacToeBoard::getWinner()
 {
-  return Invalid;
+  int i = 0;
+  int j = 0;
+  if  (((board[i][j] =='X' && board[i][j+1] == 'X' && board[i][j+2]) == 'X')
+   || ((board[i+1][j] && board[i+1][i+1] && board[i+1][j+2]) == 'X' )
+   || ((board[i+2][j] && board[i+2][j+1] && board[i+2][j+2]) == 'X')
+   || ((board[i][j] && board[i+1][j] && board[i+2][j]) == 'X')
+   || ((board[i][j+1] && board[i+1][j+1] && board[i+2][j+1]) == 'X')
+   || ((board[i][j+2] && board[i+1][j+2] && board[i+2][j+2]) == 'X')
+   || ((board[i][j] && board[i+1][j+1] && board[i+2][j+2]) =='X')
+   || ((board[i+2][j] && board[i+1][j+1] && board[i][j+2]) == 'X')
+  ) { return X;}
+  else if (((board[i][j] && board[i][j+1] && board[i][j+2]) == 'O' )
+        || ((board[i+1][j] && board[i+1][j+1] && board[i+1][j+2]) == 'O')
+        || ((board[i+2][j] && board[i+2][j+1] && board[i+2][j+2]) == 'O')
+        || ((board[i][j] && board[i+1][j] && board[i+2][j]) == 'O')
+        || ((board[i][j+1] && board[i+1][j+1] && board[i+2][j+1]) == 'O')
+        || ((board[i][j+2] && board[i+1][j+2] && board[i+2][j+2]) == 'O')
+        || ((board[i][j] && board[i+1][j+1] && board[i+2][j+2]) == 'O')
+        || ((board[i+2][j] && board[i+1][j+1] && board[i][j+2]) == 'O')
+  ) { return O;}
+  else
+  {
+    return Invalid;
+  }
 }
