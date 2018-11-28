@@ -15,7 +15,7 @@ class TicTacToeBoardTest : public ::testing::Test
 };
 
 /* EXAMPLE TEST FORMAT
-TEST(TicTacToeBoardTest, sanityCheck)
+TEST(TicTacToeBoardTest, unitTestName)
 {
 	ASSERT_TRUE(true);
 }
