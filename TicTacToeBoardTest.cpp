@@ -32,3 +32,23 @@ TEST(TicTacToeBoardTest, testPlacePiece)
 	
 	ASSERT_TRUE(true);
 }
+
+TEST(TicTacToeBoardTest, testPlacePiece2)
+{
+	TicTacToeBoard object;
+	object.placePiece(0,0);
+	Piece outcome = object.placePiece(0,0);
+	ASSERT_EQ(outcome, X);
+	
+	ASSERT_TRUE(true);
+}
+
+TEST(TicTacToeBoardTest, testPlacePieceOutOfBounds)
+{
+	TicTacToeBoard object;
+	object.placePiece(0,0);
+	Piece outcome = object.placePiece(0,3);
+	ASSERT_EQ(outcome, Invalid);
+	
+	ASSERT_TRUE(true);
+}
