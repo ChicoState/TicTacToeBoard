@@ -25,6 +25,9 @@ TEST(TicTacToeBoard, willplayerchange){
 	TicTacToeBoard tic;
 	ASSERT_EQ(tic.toggleTurn(),O);
 }
+
+
+
 //unit test to place piece on empty block
 TEST(TicTacToeBoard, placePieceOnBlank){
 	TicTacToeBoard tic;
@@ -40,4 +43,11 @@ TEST(TicTacToeBoard, placePieceOnFilled){
 TEST(TicTacToeBoard, placePieceOutofBounds){
 	TicTacToeBoard tic;
 	ASSERT_EQ(tic.placePiece(-1,0), Invalid);
+}
+
+//unit test for getPiece
+TEST(TicTacToeBoard, placePieceOutofBounds){
+	TicTacToeBoard tic;
+	tic.placePiece(0,0);
+	ASSERT_EQ(tic.getPiece(0,0), X);
 }
