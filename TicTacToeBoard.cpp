@@ -21,8 +21,7 @@ Piece TicTacToeBoard::toggleTurn()
 {
   if(turn == X){
     turn = O;
-  }
-  if(turn == O){
+  }else if(turn == O){
     turn = X;
   }
   return turn;
