@@ -45,9 +45,22 @@ TEST(TicTacToeBoard, placePieceOutofBounds){
 	ASSERT_EQ(tic.placePiece(-1,0), Invalid);
 }
 
+
 //unit test for getPiece
 TEST(TicTacToeBoard, placePieceOutofBounds){
 	TicTacToeBoard tic;
 	tic.placePiece(0,0);
 	ASSERT_EQ(tic.getPiece(0,0), X);
+}
+
+//unit tests for get winner
+TEST(TicTacToeBoard, winnerO){
+	TicTacToeBoard tic;
+	tic.placePiece(0,0);
+	tic.placePiece(0,1);
+	tic.placePiece(1,2);
+	tic.placePiece(1,1);
+	tic.placePiece(2,0);
+	tic.placePiece(2,1);
+	ASSERT_EQ(tic.getWinner(), O);
 }
