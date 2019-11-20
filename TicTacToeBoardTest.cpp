@@ -36,3 +36,8 @@ TEST(TicTacToeBoard, placePieceOnFilled){
 	tic.placePiece(0,0);
 	ASSERT_EQ(tic.placePiece(0,0), Invalid);
 }
+//unit test to place a piece on out of bounds area
+TEST(TicTacToeBoard, placePieceOutofBounds){
+	TicTacToeBoard tic;
+	ASSERT_EQ(tic.placePiece(-1,0), Invalid);
+}
