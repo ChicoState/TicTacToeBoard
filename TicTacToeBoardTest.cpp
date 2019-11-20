@@ -20,3 +20,10 @@ TEST(TicTacToeBoardTest, unitTestName)
 	ASSERT_TRUE(true);
 }
 */
+TEST(TicTacToeBoard, willplayerchange){
+	//Rando rando;
+	//ASSERT_EQ( rando.mostPopularDigit(0), 0);
+	//ASSERT_TRUE(true);
+	TicTacToeBoard tic;
+	ASSERT_EQ(tic.toggleTurn(), X || O );
+}
