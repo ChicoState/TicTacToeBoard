@@ -47,7 +47,7 @@ TEST(TicTacToeBoard, placePieceOutofBounds){
 
 
 //unit test for getPiece
-TEST(TicTacToeBoard, placePieceOutofBounds){
+TEST(TicTacToeBoard, getPieceX){
 	TicTacToeBoard tic;
 	tic.placePiece(0,0);
 	ASSERT_EQ(tic.getPiece(0,0), X);
