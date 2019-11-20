@@ -20,10 +20,19 @@ TEST(TicTacToeBoardTest, unitTestName)
 	ASSERT_TRUE(true);
 }
 */
+//unit tests to see if toggleTurn() works
 TEST(TicTacToeBoard, willplayerchange){
-	//Rando rando;
-	//ASSERT_EQ( rando.mostPopularDigit(0), 0);
-	//ASSERT_TRUE(true);
 	TicTacToeBoard tic;
-	ASSERT_EQ(tic.toggleTurn(), X || O );
+	ASSERT_EQ(tic.toggleTurn(),O);
+}
+//unit test to place piece on empty block
+TEST(TicTacToeBoard, placePieceOnBlank){
+	TicTacToeBoard tic;
+	ASSERT_EQ(tic.placePiece(0,0), Blank);
+}
+//unit test to place piece on a filled spot
+TEST(TicTacToeBoard, placePieceOnFilled){
+	TicTacToeBoard tic;
+	tic.placePiece(0,0);
+	ASSERT_EQ(tic.placePiece(0,0), Invalid);
 }
