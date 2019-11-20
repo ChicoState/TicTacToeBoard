@@ -5,7 +5,7 @@
 # REMOVED FOR REQUIRED ENV in CI GTEST_DIR = /usr/local/src/googletest/googletest
 
 # Flags passed to the preprocessor and compiler
-CPPFLAGS += --coverage -isystem $(GTEST_DIR)/include
+CPPFLAGS += --coverage -std=c++11 -isystem $(GTEST_DIR)/include
 CXXFLAGS += -g -Wall -Wextra -pthread
 
 # All tests produced by this Makefile.
