@@ -82,24 +82,24 @@ Piece TicTacToeBoard::getWinner()
 {
   
   for(int i = 0; i < BOARDSIZE; i++){
-    if(board[i][0] != Blank && (board[i][0] == board[i][1] == board[i][2])){
+    if(board[i][0] != Blank && (board[i][0] == board[i][1]) && (board[i][1] == board[i][2])){
       return board[i][0];
     }
   }
 
   for(int i = 0; i < BOARDSIZE; i++){
-    if(board[0][i] != Blank && (board[0][i] == board[1][i] == board[2][i])){
+    if(board[0][i] != Blank && (board[0][i] == board[1][i]) && (board[1][i] == board[2][i])){
       return board[0][i];
     }
   }
 
   if(board[1][1] != Blank && (board[0][0] == board[1][1] == board[2][2])){
     return board[1][1];
-  }
+  }else
   
   if(board[1][1] != Blank && (board[2][0] == board[1][1] == board[0][2])){
     return board[1][1];
   }
-
   return Blank;
+  
 }
