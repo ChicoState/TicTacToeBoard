@@ -34,7 +34,7 @@ TEST(TicTacToeBoard, placePieceOnBlank){
 	ASSERT_EQ(tic.placePiece(0,0), Blank);
 }
 //unit test to place piece on a filled spot
-TEST(TicTacToeBoard, placePieceOnFilled){
+TEST(TicTacToeBoard, placePieceOnOutside){
 	TicTacToeBoard tic;
 	tic.placePiece(0,0);
 	ASSERT_EQ(tic.placePiece(0,0), X);
