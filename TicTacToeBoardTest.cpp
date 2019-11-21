@@ -31,10 +31,10 @@ TEST(TicTacToeBoard, willplayerchange){
 //unit test to place piece on empty block
 TEST(TicTacToeBoard, placePieceOnBlank){
 	TicTacToeBoard tic;
-	ASSERT_EQ(tic.placePiece(0,0), Blank);
+	ASSERT_EQ(tic.placePiece(0,0), X);
 }
 //unit test to place piece on a filled spot
-TEST(TicTacToeBoard, placePieceOnOutside){
+TEST(TicTacToeBoard, placePieceOnFilled){
 	TicTacToeBoard tic;
 	tic.placePiece(0,0);
 	ASSERT_EQ(tic.placePiece(0,0), X);
