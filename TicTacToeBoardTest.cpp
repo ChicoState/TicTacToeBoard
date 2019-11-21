@@ -62,5 +62,5 @@ TEST(TicTacToeBoard, winnerO){
 	tic.placePiece(1,1);
 	tic.placePiece(2,0);
 	tic.placePiece(2,1);
-	ASSERT_EQ(tic.getWinner(), X);
+	ASSERT_EQ(tic.getWinner(), O);
 }
