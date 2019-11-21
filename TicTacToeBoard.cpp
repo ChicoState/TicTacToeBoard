@@ -47,14 +47,12 @@ Piece TicTacToeBoard::placePiece(int row, int column)
     return Invalid;
   }else 
   if(getPiece(row,column) == X){
-    Piece temp = turn;
     toggleTurn();
-    return temp;
+    return board[row][column];
   }else 
   if(getPiece(row,column) == O){
-    Piece temp = turn;
     toggleTurn();
-    return temp;
+    return board[row][column];
   }else 
   if(getPiece(row,column) == Blank){
     board[row][column] = turn;
