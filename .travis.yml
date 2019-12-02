@@ -11,8 +11,12 @@ before_install:
   - export GTEST_DIR=$(pwd)
   - cmake ${GTEST_DIR}
   - cd ${CURRENT_PROJ_DIR}
+  - pip install --user cpp-coveralls
 
 script:
   - make clean
   - make
   - ./TicTacToeBoardTest
+
+after_success:
+  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
