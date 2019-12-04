@@ -33,12 +33,21 @@ TEST(TicTacToeBoard, placePieceOnBlank){
 	TicTacToeBoard tic;
 	ASSERT_EQ(tic.placePiece(0,0), X);
 }
-//unit test to place piece on a filled spot
-TEST(TicTacToeBoard, placePieceOnFilled){
+//unit test to place piece on a filled spot of X
+TEST(TicTacToeBoard, placePieceOnFilledX){
 	TicTacToeBoard tic;
 	tic.placePiece(0,0);
 	ASSERT_EQ(tic.placePiece(0,0), X);
 }
+
+//unit test to place piece on a filled spot of O
+TEST(TicTacToeBoard, placePieceOnFilledO){
+	TicTacToeBoard tic;
+	tic.placePiece(0,0);
+	tic.placePiece(1,1);
+	ASSERT_EQ(tic.placePiece(1,1), X);
+}
+
 //unit test to place a piece on out of bounds area
 TEST(TicTacToeBoard, placePieceOutofBounds){
 	TicTacToeBoard tic;
