@@ -1,4 +1,4 @@
-#[![Coverage Status](https://coveralls.io/repos/github/bigFOOTbigSMASH/TicTacToeBoard/badge.svg?branch=master)](https://coveralls.io/github/bigFOOTbigSMASH/TicTacToeBoard?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/bigFOOTbigSMASH/TicTacToeBoard/badge.svg?branch=master)](https://coveralls.io/github/bigFOOTbigSMASH/TicTacToeBoard?branch=master)
 
 # TicTacToeBoard
 
