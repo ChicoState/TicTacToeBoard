@@ -103,7 +103,7 @@ TEST(TicTacToeBoard, winnerOdiagonal){
 	tic.placePiece(0,2);
 	tic.placePiece(1,0);
 	tic.placePiece(1,1);
+	tic.placePiece(2,1);
 	tic.placePiece(2,0);
-	tic.placePiece(2,2);
 	ASSERT_EQ(tic.getWinner(), O);
 }
