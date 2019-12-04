@@ -73,3 +73,37 @@ TEST(TicTacToeBoard, winnerO){
 	tic.placePiece(2,1);
 	ASSERT_EQ(tic.getWinner(), O);
 }
+
+//unit tests for get winner
+TEST(TicTacToeBoard, winnerX){
+	TicTacToeBoard tic;
+	tic.placePiece(0,0);
+	tic.placePiece(1,0);
+	tic.placePiece(0,1);
+	tic.placePiece(2,0);
+	tic.placePiece(0,2);
+	ASSERT_EQ(tic.getWinner(), X);
+}
+
+//unit tests for get winner diagonal
+TEST(TicTacToeBoard, winnerXdiagonal){
+	TicTacToeBoard tic;
+	tic.placePiece(0,0);
+	tic.placePiece(1,0);
+	tic.placePiece(1,1);
+	tic.placePiece(2,1);
+	tic.placePiece(2,2);
+	ASSERT_EQ(tic.getWinner(), X);
+}
+
+//unit tests for get winner diagonal
+TEST(TicTacToeBoard, winnerOdiagonal){
+	TicTacToeBoard tic;
+	tic.placePiece(0,0);
+	tic.placePiece(0,2);
+	tic.placePiece(1,0);
+	tic.placePiece(1,1);
+	tic.placePiece(2,0);
+	tic.placePiece(2,2);
+	ASSERT_EQ(tic.getWinner(), O);
+}
