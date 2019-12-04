@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/bigFOOTbigSMASH/TicTacToeBoard.svg?branch=master)](https://travis-ci.org/bigFOOTbigSMASH/TicTacToeBoard)
+[![Coverage Status](https://coveralls.io/repos/github/bigFOOTbigSMASH/TicTacToeBoard/badge.svg?branch=master)](https://coveralls.io/github/bigFOOTbigSMASH/TicTacToeBoard?branch=master)
+
 # TicTacToeBoard
 
 ## Associated Enumerated Types
