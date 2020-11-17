@@ -1,9 +1,11 @@
 # Getting Started
 
 Build the Unit Testing CPP ("gtest") container if you have not already:
+
 `docker build -t gtest .`
 
 Then run the container, with bound access to your repository:
+
 `docker run --mount type=bind,source="$(pwd)",target=/usr/src -it gtest`
 
 This should automatically re-build the project and run the tests
