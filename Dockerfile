@@ -27,4 +27,4 @@ RUN git clone https://github.com/google/googletest ${GTEST_REPO} && \
     cd ${WORKDIR}
 
 # Build and run tests
-CMD ["sh","-c","sed -i -e 's/\r$//' test_runner.sh; ${WORKDIR}/test_runner.sh; gcov -r *.cpp"]
+CMD ["sh","-c","sed -i -e 's/\r$//' test_runner.sh; ${WORKDIR}/test_runner.sh; gcov -rbc *.cpp"]
