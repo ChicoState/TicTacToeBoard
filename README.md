@@ -8,6 +8,10 @@ Then run the container, with bound access to your repository:
 
 `docker run --mount type=bind,source="$(pwd)",target=/usr/src -it gtest`
 
+Or to interactively work within the container's shell:
+
+`docker run --mount type=bind,source="$(pwd)",target=/usr/src -it gtest sh`
+
 This should automatically re-build the project and run the tests
 
 # TicTacToeBoard
