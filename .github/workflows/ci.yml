@@ -1,0 +1,28 @@
+name: C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y -f build-essential g++ cmake
+  build:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build project in container
+        run: docker build -t gtest .
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run container with test runner
+        run: docker run -t gtest
