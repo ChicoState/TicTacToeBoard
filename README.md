@@ -1,3 +1,5 @@
+[![C++ CI](https://github.com/ChicoState/TicTacToeBoard/actions/workflows/ci.yml/badge.svg)](https://github.com/ChicoState/TicTacToeBoard/actions/workflows/ci.yml)
+
 # Getting Started
 
 Build the Unit Testing CPP ("gtest") container if you have not already:
